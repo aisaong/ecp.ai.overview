@@ -5,53 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ECP’AI – Appel à contribution</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Segoe UI", Roboto, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
+      display: flex;
       background-color: #f9fafc;
       color: #333;
+      line-height: 1.6;
     }
+
+    /* ---- MENU LATÉRAL ---- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 230px;
+      background: linear-gradient(180deg, #007acc, #00bfa5);
+      color: white;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    }
+
+    nav h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0.5rem 0;
+      transition: opacity 0.3s, transform 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+    /* ---- CONTENU ---- */
+    .content {
+      margin-left: 230px;
+      width: calc(100% - 230px);
+    }
+
     header {
       background: linear-gradient(135deg, #007acc, #00bfa5);
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
+      position: relative;
     }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.15), transparent 70%);
+      z-index: 0;
+    }
+
+    header .text {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: auto;
+    }
+
     header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
     }
+
     header p {
       font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
+      opacity: 0.95;
     }
+
     main {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     section {
       margin-bottom: 3rem;
     }
+
     h2 {
       color: #007acc;
       border-left: 6px solid #00bfa5;
       padding-left: 10px;
     }
+
     .atelier {
       background: white;
       padding: 1.5rem;
       border-radius: 12px;
       margin-bottom: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
     }
+
+    .atelier:hover {
+      transform: translateY(-4px);
+    }
+
     .atelier h3 {
       margin-top: 0;
       color: #007acc;
     }
+
     .intro {
       font-size: 1.1rem;
       background: #e3f2fd;
@@ -59,6 +133,7 @@
       border-radius: 10px;
       margin-bottom: 2rem;
     }
+
     a.button {
       display: inline-block;
       padding: 12px 25px;
@@ -67,11 +142,14 @@
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
+
     a.button:hover {
       background: #005fa3;
+      transform: scale(1.05);
     }
+
     footer {
       text-align: center;
       background: #f0f0f0;
@@ -79,66 +157,104 @@
       font-size: 0.9rem;
       color: #666;
     }
+
+    /* ---- MOBILE ---- */
+    @media (max-width: 800px) {
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0.8rem;
+      }
+
+      nav h2 {
+        display: none;
+      }
+
+      nav a {
+        margin: 0 1rem;
+      }
+
+      .content {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>🌍 ECP’AI — Appel à contribution</h1>
-    <p>Rejoignez une aventure collective pour bâtir une pédagogie inovante et une intelligence artificielle au service de la paix, de l’éducation et de l’humanité 🤝💡</p>
-  </header>
+  <!-- MENU LATÉRAL -->
+  <nav>
+    <h2>🌍🕊️ ECP’AI</h2>
+    <a href="#vision">Vision</a>
+    <a href="#ateliers">Ateliers</a>
+    <a href="#contribuer">Contribuer</a>
+  </nav>
 
-  <main>
-    <section class="intro">
-      <p>Bienvenue sur la page d’appel à contribution d’ECP’AI 💫<br><br>
-      Ce projet est né d’une conviction simple : l’intelligence artificielle peut être une <strong>force de bien</strong> lorsqu’elle s’enracine dans les valeurs de l’éducation à la culture de paix 🌿.<br><br>
-      Ensemble, construisons un écosystème qui allie <strong>innovation technologique</strong> et <strong>sagesse éducative</strong>, pour imaginer des outils, des pratiques et des modèles d’apprentissage à impact humain, éthique et durable 🌈.</p>
-    </section>
-
-    <section>
-      <h2>🧭 Vision du projet</h2>
-      <p>Notre ambition est de co-construire un projet collectif et ouvert qui mobilise les acteurs de l’éducation, de la technologie et de la société civile autour d’un objectif commun : 
-      <strong>déployer la pédagogie ECP grâce à l’IA</strong>, tout en préservant les valeurs fondamentales du vivre ensemble, de la bienveillance et de la solidarité 🌱.</p>
-    </section>
-
-    <section>
-      <h2>💡 Les 4 ateliers collaboratifs</h2>
-
-      <div class="atelier">
-        <h3>🏗️ Atelier 1 — Structurer le projet ECP’AI : modèle économique, gouvernance & partenariats</h3>
-        <p>Ce pilier pose les fondations stratégiques du projet ECP’AI comme initiative à impact systémique, éthique et durable. 
-        Il vise à définir une gouvernance inclusive, un modèle économique soutenable et une feuille de route claire pour assurer la pérennité du projet tout en respectant ses valeurs éducatives et sociales 🌿.</p>
+  <!-- CONTENU PRINCIPAL -->
+  <div class="content">
+    <header>
+      <div class="text">
+        <h1>🌍🕊️ Projet ECP'IA : Appel à contribution</h1>
+        <p>Construisons ensemble une pédagogie innovante et une intelligence artificielle au service de la paix, de l’éducation et de l’humanité 🤝💡</p>
       </div>
+    </header>
 
-      <div class="atelier">
-        <h3>📣 Atelier 2 — Faire rayonner ECP’AI : communication, marketing & plaidoyer</h3>
-        <p>Positionner ECP’AI comme une <strong>marque sociale engagée</strong>, porteuse d’une vision éducative et citoyenne de l’IA. 
-        Cet atelier explore les leviers de communication, de mobilisation et de plaidoyer pour inspirer, fédérer et donner envie d’agir 💬🌍.</p>
-      </div>
+    <main>
+      <section class="intro">
+        <p>Bienvenue sur la page d’appel à contribution d’ECP’AI 💫<br><br>
+        Ce projet est né d’une conviction simple : l’intelligence artificielle peut être une <strong>force de bien</strong> lorsqu’elle s’enracine dans les valeurs de l’éducation à la culture de paix 🌿.<br><br>
+        Ensemble, construisons un écosystème qui allie <strong>innovation technologique</strong> et <strong>sagesse éducative</strong>, pour imaginer des outils, des pratiques et des modèles d’apprentissage à impact humain, éthique et durable 🌈.</p>
+      </section>
 
-      <div class="atelier">
-        <h3>🤖 Atelier 3 — Créer l’outil ECP’AI : développement d’une IA au service de la paix</h3>
-        <p>Concevoir une IA éthique, transparente et éco-responsable, alignée avec les principes pédagogiques de l’ECP. 
-        L’objectif : bâtir une architecture technologique ouverte, fiable et respectueuse de l’humain 🔬💚.</p>
-      </div>
+      <section id="vision">
+        <h2>🧭 Vision du projet</h2>
+        <p>Notre ambition est de co-construire un projet collectif et ouvert qui mobilise les acteurs de l’éducation, de la technologie et de la société civile autour d’un objectif commun : 
+        <strong>déployer la pédagogie ECP grâce à l’IA</strong>, tout en préservant les valeurs fondamentales du vivre ensemble, de la bienveillance et de la solidarité 🌱.</p>
+      </section>
 
-      <div class="atelier">
-        <h3>🎓 Atelier 4 — Expérimenter ECP’AI : modèle pédagogique & tests sur données réelles</h3>
-        <p>Tester, évaluer et affiner les usages de l’IA dans des contextes éducatifs concrets. 
-        Cet atelier ancre le projet dans la réalité du terrain et fait de l’expérimentation un moteur d’apprentissage collectif 🧩🌟.</p>
-      </div>
-    </section>
+      <section id="ateliers">
+        <h2>💡 Les 4 ateliers collaboratifs</h2>
 
-    <section>
-      <h2>🤝 Contribuer</h2>
-      <p>Envie de participer à l’un de ces ateliers ou de soutenir le projet ?  
-      Remplissez le formulaire ci-dessous et rejoignez la communauté ECP’AI !</p>
-      <p><a href="https://forms.gle/..." class="button" target="_blank">📝 Je contribue</a></p>
-    </section>
-  </main>
+        <div class="atelier">
+          <h3>🏗️ Atelier 1 — Structurer le projet ECP’AI : modèle économique, gouvernance & partenariats</h3>
+          <p>Ce pilier pose les fondations stratégiques du projet ECP’AI comme initiative à impact systémique, éthique et durable. 
+          Il vise à définir une gouvernance inclusive, un modèle économique soutenable et une feuille de route claire pour assurer la pérennité du projet tout en respectant ses valeurs éducatives et sociales 🌿.</p>
+        </div>
 
-  <footer>
-    <p>© 2025 ECP’AI — Ensemble pour une IA au service de la paix 🌍</p>
-  </footer>
+        <div class="atelier">
+          <h3>📣 Atelier 2 — Faire rayonner ECP’AI : communication, marketing & plaidoyer</h3>
+          <p>Positionner ECP’AI comme une <strong>marque sociale engagée</strong>, porteuse d’une vision éducative et citoyenne de l’IA. 
+          Cet atelier explore les leviers de communication, de mobilisation et de plaidoyer pour inspirer, fédérer et donner envie d’agir 💬🌍.</p>
+        </div>
+
+        <div class="atelier">
+          <h3>🤖 Atelier 3 — Créer l’outil ECP’AI : développement d’une IA au service de la paix</h3>
+          <p>Concevoir une IA éthique, transparente et éco-responsable, alignée avec les principes pédagogiques de l’ECP. 
+          L’objectif : bâtir une architecture technologique ouverte, fiable et respectueuse de l’humain 🔬💚.</p>
+        </div>
+
+        <div class="atelier">
+          <h3>🎓 Atelier 4 — Expérimenter ECP’AI : modèle pédagogique & tests sur données réelles</h3>
+          <p>Tester, évaluer et affiner les usages de l’IA dans des contextes éducatifs concrets. 
+          Cet atelier ancre le projet dans la réalité du terrain et fait de l’expérimentation un moteur d’apprentissage collectif 🧩🌟.</p>
+        </div>
+      </section>
+
+      <section id="contribuer">
+        <h2>🤝 Contribuer</h2>
+        <p>Envie de participer à l’un de ces ateliers ou de soutenir le projet ?  
+        Remplissez le formulaire ci-dessous et rejoignez la communauté ECP’AI !</p>
+        <p><a href="https://forms.gle/..." class="button" target="_blank">📝 Je contribue</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 ECP’AI — Ensemble pour une IA au service de la paix 🌍</p>
+    </footer>
+  </div>
 </body>
 </html>
