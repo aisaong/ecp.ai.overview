@@ -9,6 +9,16 @@
       scroll-behavior: smooth;
     }
 
+    .lang-switch .current{
+      color: white; 
+      padding: 6px 10px; 
+      border-radius: 6px; 
+      background: rgba(255,255,255,.25);
+      font-weight: bold;
+  }
+  .lang-switch a[aria-current="page"]{ pointer-events:none; }
+
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -19,7 +29,7 @@
       line-height: 1.6;
     }
 
-    /* ---- MENU LATÉRAL ---- */
+    /* ---- NAV ---- */
     nav {
       position: fixed;
       top: 0;
@@ -158,7 +168,30 @@
       color: #666;
     }
 
-    /* ---- MOBILE ---- */
+    /* ---- Sélecteur de langue (en haut à droite) ---- */
+    .lang-switch{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 2;
+      display: flex;
+      gap: .5rem;
+      font-weight: bold;
+    }
+    .lang-switch a{
+      color: white;
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: rgba(255,255,255,.15);
+      transition: background .2s, transform .2s;
+    }
+    .lang-switch a:hover{
+      background: rgba(255,255,255,.25);
+      transform: translateY(-1px);
+    }
+
+    /* ---- Responsive ---- */
     @media (max-width: 800px) {
       nav {
         position: relative;
@@ -168,81 +201,73 @@
         justify-content: center;
         padding: 0.8rem;
       }
-
-      nav h2 {
-        display: none;
-      }
-
-      nav a {
-        margin: 0 1rem;
-      }
-
-      .content {
-        margin-left: 0;
-        width: 100%;
-      }
+      nav h2 { display: none; }
+      nav a { margin: 0 1rem; }
+      .content { margin-left: 0; width: 100%; }
     }
   </style>
 </head>
-
 <body>
-  <!-- MENU LATÉRAL -->
   <nav>
     <h2>🌍🕊️ ECP’AI</h2>
     <a href="#vision">Vision</a>
-    <a href="#ateliers">Ateliers</a>
-    <a href="#contribuer">Contribuer</a>
+    <a href="#workshops">Ateliers</a>
+    <a href="#contribute">Contribuer</a>
   </nav>
 
-  <!-- CONTENU PRINCIPAL -->
   <div class="content">
     <header>
+      <div class="lang-switch" aria-label="Sélecteur de langue">
+        <span class="current" aria-current="page">FR</span>
+        <a href="/ecp.ai.overview/en/">EN</a>
+        <a href="/ecp.ai.overview/ar/">العربية</a>
+      </div>
       <div class="text">
         <h1>🌍🕊️ Projet ECP'IA : Appel à contribution</h1>
-        <p>Construisons ensemble une pédagogie innovante et une intelligence artificielle au service de la paix, de l’éducation et de l’humanité 🤝💡</p>
+        <p>Construisons ensemble une pédagogie innovante et une IA responsable au service de la paix, de l’éducation et de l’humanité 🤝💡</p>
       </div>
     </header>
 
     <main>
       <section class="intro">
-        <p>Bienvenue sur la page d’appel à contribution d’ECP’AI 💫<br><br>
-        Ce projet est né d’une conviction simple : l’intelligence artificielle peut être une <strong>force de bien</strong> lorsqu’elle s’enracine dans les valeurs de l’éducation à la culture de paix 🌿.<br><br>
-        Ensemble, construisons un écosystème qui allie <strong>innovation technologique</strong> et <strong>sagesse éducative</strong>, pour imaginer des outils, des pratiques et des modèles d’apprentissage à impact humain, éthique et durable 🌈.</p>
+        <p>Bienvenue dans l’appel à contribution ECP’AI 💫<br><br>
+        Ce projet part d’une conviction simple : l’intelligence artificielle peut être une <strong>force de bien</strong> lorsqu’elle s’enracine dans les valeurs de l’Éducation à la Culture de Paix 🌿<br><br>
+        Ensemble, conjuguons <strong>innovation technologique</strong> et <strong>sagesse pédagogique</strong> pour imaginer des outils, des pratiques et des modèles d’apprentissage à impact humain, éthique et durable 🌈</p>
       </section>
 
       <section id="vision">
         <h2>🧭 Vision du projet</h2>
-        <p>Notre ambition est de co-construire un projet collectif et ouvert qui mobilise les acteurs de l’éducation, de la technologie et de la société civile autour d’un objectif commun : 
-        <strong>déployer la pédagogie ECP grâce à l’IA</strong>, tout en préservant les valeurs fondamentales du vivre ensemble, de la bienveillance et de la solidarité 🌱.</p>
+        <p>Notre ambition : co-construire un projet collectif et ouvert qui mobilise des acteurs de l’éducation, de la technologie et de la société civile autour d’un objectif partagé :
+        <strong>déployer l’ECP via l’IA</strong>, tout en préservant les valeurs clés du vivre-ensemble, de la bienveillance et de la solidarité 🌱</p>
       </section>
 
-      <section id="ateliers">
+      <section id="workshops">
         <h2>💡 Les 4 ateliers collaboratifs</h2>
 
         <div class="atelier">
-          <h3>🏗️ Atelier 1 — Structurer le projet ECP’AI : modèle économique, gouvernance & partenariats</h3>
-          <p>Poser les fondations stratégiques du projet ECP’AI : gouvernance inclusive, modèle économique soutenable, partenariats... Cet atelier définit la vision structurelle et durable du projet, en veillant à aligner les choix stratégiques sur les valeurs éthiques et éducatives de l’ECP.</p>
+          <h3>🏗️ Atelier 1 — Structurer ECP’AI : modèle économique, gouvernance & partenariats</h3>
+          <p>Poser les fondations stratégiques d’ECP’AI : gouvernance inclusive, modèle économique soutenable, partenariats… L’atelier définit une vision de long terme alignée avec les valeurs éthiques et éducatives de l’ECP.</p>
         </div>
 
         <div class="atelier">
-          <h3>📣 Atelier 2 — Faire rayonner ECP’AI : communication, marketing & plaidoyer</h3>
-          <p>Explorer les leviers de communication, de mobilisation et de plaidoyer pour inspirer, fédérer et donner envie d’agir au service de l’ECP. Cet atelier vise à renforcer la visibilité du projet et à créer une communauté engagée autour de ses principes de paix et de coopération.</p>
+          <h3>📣 Atelier 2 — Faire rayonner ECP’AI : communication, diffusion & plaidoyer</h3>
+          <p>Explorer les leviers de communication et de mobilisation pour inspirer, rassembler et encourager l’action en faveur de l’ECP. L’atelier renforce la visibilité et construit une communauté engagée autour de la paix et de la coopération.</p>
         </div>
 
         <div class="atelier">
-          <h3>🤖 Atelier 3 — Créer l’outil ECP’AI : développement d’une IA au service de la paix</h3>
-          <p>Concevoir une IA éthique, transparente et éco-responsable, alignée avec les principes pédagogiques de l’ECP. L’objectif est de créer un outil technologique qui soutienne l’apprentissage, la compréhension mutuelle et la transmission des valeurs du vivre ensemble.</p>
+          <h3>🤖 Atelier 3 — Créer l’outil ECP’AI : une IA au service de la paix</h3>
+          <p>Concevoir une IA éthique, transparente et éco-responsable, alignée avec la pédagogie ECP. Objectif : une technologie qui soutient l’apprentissage, la compréhension mutuelle et la transmission de valeurs communes.</p>
         </div>
 
         <div class="atelier">
           <h3>🎓 Atelier 4 — Expérimenter ECP’AI : modèle pédagogique & tests sur données réelles</h3>
-          <p>Tester, évaluer et affiner les modèles et résultats de l’IA, dans des contextes éducatifs concrets, afin de garantir leur conformité aux principes de l’ECP. Cet atelier assure la cohérence pédagogique du projet et son impact réel sur le terrain éducatif.</p>
+          <p>Tester, évaluer et améliorer les modèles et sorties d’IA en contextes éducatifs réels afin d’assurer l’alignement avec l’ECP. Cet atelier garantit la cohérence pédagogique et l’impact sur le terrain.</p>
         </div>
       </section>
 
-      <section id="contribuer">
+      <section id="contribute">
         <h2>🤝 Contribuer</h2>
-        <p>Envie de participer à l’un de ces ateliers ou de soutenir le projet ?  
+        <p>Envie de rejoindre un atelier ou de soutenir le projet ?  
         Remplissez le formulaire ci-dessous et rejoignez la communauté ECP’AI !</p>
         <p><a href="https://framaforms.org/rejoignez-le-projet-ecpai-candidatez-a-un-de-ses-ateliers-ndmw-l-mshrw-ltrby-lthqf-lslm-w-ldhk-lstny" class="button" target="_blank">📝 Je contribue</a></p>
       </section>
