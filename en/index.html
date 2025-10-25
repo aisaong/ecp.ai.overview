@@ -57,18 +57,22 @@
       text-align: center; background: #f0f0f0; padding: 1.5rem; font-size: 0.9rem; color: #666;
     }
 
-    /* Switch langues — en haut à droite même en arabe */
-.lang-switch{
-  position: absolute;
-  top: 1rem;
-  right: 1rem;      /* <-- forcer à droite */
-  left: auto;
-  z-index: 2;
-  display: flex;
-  gap: .5rem;
-  font-weight: bold;
-  flex-direction: row-reverse; /* optionnel : pour afficher "العربية" avant "FR" */
-}
+ /* Lang switcher (copie FR) */
+    .lang-switch {
+      position: absolute; top: 1rem; right: 1rem; z-index: 2; display: flex; gap: 0.5rem; font-weight: bold;
+    }
+    .lang-switch a {
+      color: white; text-decoration: none; padding: 6px 10px; border-radius: 6px;
+      background: rgba(255,255,255,0.15); transition: background 0.2s, transform 0.2s;
+    }
+    .lang-switch a:hover { background: rgba(255,255,255,0.25); transform: translateY(-1px); }
+    /* Mobile */
+    @media (max-width: 800px) {
+      nav { position: relative; width: 100%; height: auto; flex-direction: row; justify-content: center; padding: 0.8rem; }
+      nav h2 { display: none; }
+      nav a { margin: 0 1rem; }
+      .content { margin-left: 0; width: 100%; }
+    }
 
   </style>
 </head>
