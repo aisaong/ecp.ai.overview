@@ -9,6 +9,16 @@
       scroll-behavior: smooth;
     }
 
+    .lang-switch .current{
+      color: white; 
+      padding: 6px 10px; 
+      border-radius: 6px; 
+      background: rgba(255,255,255,.25);
+      font-weight: bold;
+  }
+  .lang-switch a[aria-current="page"]{ pointer-events:none; }
+
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -208,7 +218,7 @@
   <div class="content">
     <header>
       <div class="lang-switch" aria-label="Sélecteur de langue">
-        <a href="/ecp.ai.overview/">FR</a>
+        <span class="current" aria-current="page">FR</span>
         <a href="/ecp.ai.overview/en/">EN</a>
         <a href="/ecp.ai.overview/ar/">العربية</a>
       </div>
