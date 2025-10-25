@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ECP’AI – دعوة للمساهمة</title>
   <style>
+    .lang-switch .current
+    {
+      color: white; 
+      padding: 6px 10px; 
+      border-radius: 6px; 
+      background: rgba(255,255,255,.25);
+      font-weight: bold;
+    }
+    .lang-switch a[aria-current="page"]{ pointer-events:none; }
+    
     html { scroll-behavior: smooth; }
     body {
       font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex;
@@ -83,7 +93,7 @@
     <h2>🌍🕊️ ECP’AI</h2>
       <a href="/ecp.ai.overview/">FR</a>
       <a href="/ecp.ai.overview/en/">EN</a>
-      <a href="/ecp.ai.overview/ar/">العربية</a>
+      <span class="current" aria-current="page">العربية</span>
   </nav>
 
   <div class="content">
